@@ -23,22 +23,15 @@ html, body {
 
 #side h1 {
 	text-align: center;
-	font-size: 3em;
+	font-size: 2em;
 }
 
 .panel {
 	background: #222;
+	width: 100%;
 }
 
-#selectPanel {
-	height: 20em;
-}
-
-#towerPanel {
-	height: 10em;
-}
-
-#moneyVal {
+.right {
 	position: absolute;
 	right: 1em;
 	margin: auto;
@@ -50,26 +43,10 @@ header {
 	padding: 0.5em;
 	font-size: 1.5em;
 	font-weight: bold;
+	margin: 0;
 }
 
-.panel section {
-	padding: 1em;
-}
-
-.panel section #description {
-	width: 50%;
-	display: inline-block;
-	overflow: auto;
-	max-height: 14em;
-}
-
-.panel section #values {
-	width: 50%;
-	display: inline-block;
-	float: right;
-	font-size: 2em;
-}
-
-.panel section #values table {
-	padding: 1em;
+.panel p {
+	margin: 0;
+	padding: 0.5em;
 }

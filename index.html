@@ -10,7 +10,8 @@
 <body>
 	<div id='game'>
 	<div id="container"></div>
-	<div style="font-size:2em;color:#fff;">
+	<!--<div style="font-size:2em;color:#fff;">
+			http://unicode-table.com/en/sets/arrows-symbols/
 			&#8594;dart&#8649;double&#8694;triple<br/>
 			&#8596;ended<br/>
 			&#10143;laser&#10144;laser2<br/>
@@ -35,42 +36,24 @@
 			&#10608;bend
 			&#8680;empty&#8688;bar
 			</div>
-	</div>
+	</div>-->
 	<div id='side'>
 		<h1>Wave <span id='wave'>0</span></h1>
-		<div class='panel' id='towerPanel'>
+		<div class='panel' id='dataPanel'>
 			<header>
-			Towers<span id='moneyVal'>$0</span>
+			Money<span class='right' id='moneyVal'>$0</span><br/>
+			Lives<span class='right' id='lifeVal'>20</span><br/>
 			</header>
 
 		</div>
-		<div class='panel' id='selectPanel'>
-			<header>Selected Thing</header>
-			<section>
-				<article id='description'>
-					Details about tower Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat.
-				</article>
-				<article id='values'>
-					<table>
-						<tr>
-							<td style='width: 1.5em;'>&#x0231A;</td>
-							<td id='timeVal'>#</td>
-						</tr>
-						<tr>
-							<td>&#x2694;</td>
-							<td id='damageVal'>#</td>
-						</tr>
-						<tr>
-							<td>&#x1F4CF;</td>
-							<td id='rangeVal'>#</td>
-						</tr>
-						
-					</table>
-				</article>
-			</section>
+		<div class='panel'>
+			<header>Upgrades</header>
+			<p id='description'>
+				Details about tower Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.
+			<p>
 		</div>
 	</div>
 	<script src='game.js'> </script>
