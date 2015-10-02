@@ -38,6 +38,12 @@ html, body {
 	height: 10em;
 }
 
+#moneyVal {
+	position: absolute;
+	right: 1em;
+	margin: auto;
+}
+
 header {
 	width: 100%;
 	background: #333;
