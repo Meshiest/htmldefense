@@ -17,7 +17,7 @@ html, body {
 	top: 0;
 	right: 0;
 	background: #000;
-	width: 30em;
+	width: 25em;
 	height: 100vh;
 }
 
@@ -26,11 +26,19 @@ html, body {
 	font-size: 3em;
 }
 
-#specs {
+.panel {
 	background: #222;
 }
 
-#specs #titleVal {
+#selectPanel {
+	height: 20em;
+}
+
+#towerPanel {
+	height: 10em;
+}
+
+header {
 	width: 100%;
 	background: #333;
 	padding: 0.5em;
@@ -38,22 +46,24 @@ html, body {
 	font-weight: bold;
 }
 
-#specs section {
+.panel section {
 	padding: 1em;
 }
 
-#specs section #description {
+.panel section #description {
 	width: 50%;
 	display: inline-block;
+	overflow: auto;
+	max-height: 14em;
 }
 
-#specs section #values {
+.panel section #values {
 	width: 50%;
 	display: inline-block;
 	float: right;
 	font-size: 2em;
 }
 
-#specs section #values table {
+.panel section #values table {
 	padding: 1em;
 }
