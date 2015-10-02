@@ -7,7 +7,7 @@ html, body {
 }
 #game {
 	background: #444;
-	width: 100%;
+	width: 75vw;
 	height: 100vh;
 }
 
@@ -17,7 +17,7 @@ html, body {
 	top: 0;
 	right: 0;
 	background: #000;
-	width: 25em;
+	width: 25vw;
 	height: 100vh;
 }
 
@@ -49,4 +49,13 @@ header {
 .panel p {
 	margin: 0;
 	padding: 0.5em;
+}
+
+#canvas {
+	background: #444;
+	top: 0;
+	left: 0;
+	position: fixed;
+	width: 75vw;
+	height: 100%;
 }
