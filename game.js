@@ -67,6 +67,7 @@ function showUpgrades(tower) {
 		var tower = constructs[selectedTower]
 	console.log(tower)
 	$('#upgrades').html('');
+
 	for(var k in towers) {
 		var v = towers[k]
 		if(!v.parent)
@@ -76,6 +77,10 @@ function showUpgrades(tower) {
 			$('#upgrades').append(genUpgradeDesc(k))
 		}
 	}
+	if($('#upgrades').children().length == 0) {
+		$('#upgrades').html("<div class='desc'>No More Upgrades</div>")
+	}
+
 }
 
 function clickUpgrade(e) {
@@ -125,7 +130,6 @@ function drawTower(char, x, y, theta, selected) {
 
 	g.save()
 	g.translate(x, y)
-	g.rotate(-theta)
 	g.fillStyle="#222"
 	if(clickMode != MODE_BUY && Math.hypot(mouseX-x, mouseY-y) < 25)
 			g.fillStyle="#333"
@@ -153,7 +157,11 @@ function drawTower(char, x, y, theta, selected) {
 	g.textAlign="center"
 	g.font = "50px 'Roboto'"
 	g.textBaseline = 'middle'; 
+	g.save()
+	g.rotate(theta)
 	g.fillText(String.fromCharCode(char), 0, 0)
+	g.restore()
+	
 	g.restore()
 }
 
@@ -173,6 +181,7 @@ function tick() {
 
 	for(var i in constructs) {
 		var tower = constructs[i]
+		tower.theta = Math.atan2(mouseY-tower.y, mouseX-tower.x)
 		drawTower(towers[tower.type].char, tower.x, tower.y, tower.theta, selectedTower == i)
 	}
 
