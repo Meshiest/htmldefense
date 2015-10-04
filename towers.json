@@ -1,0 +1,181 @@
+var towers = {
+	"d" : {
+		"name" : "Dart",
+		"char" : 8594
+	},
+	"d2" : {
+		"name" : "Dart Double",
+		"char" : 8649,
+		"parent" : ["d"]
+	},
+	"d3" : {
+		"name" : "Dart Triple",
+		"char" : 8694,
+		"parent" : ["d2"]
+	},
+	"dr" : {
+		"name" : "Dart Reverse",
+		"char" : 8596,
+		"parent" : ["d"]
+	},
+	"lz" : {
+		"name" : "Beam",
+		"char" : 10143,
+		"parent" : ["rp2"]
+	},
+	"lz2" : {
+		"name" : "Laser",
+		"char" : 10144,
+		"parent" : ["lz"]
+	},
+	"wv" : {
+		"name" : "Wave",
+		"char" : 8605,
+		"parent" : ["lz"]
+	},
+	"wvr" : {
+		"name" : "Wave Reverse",
+		"char" : 8621,
+		"parent" : ["wv"]
+	},
+	"wv2" : {
+		"name" : "Shock",
+		"char" : 8669,
+		"parent" : ["wv"]
+	},
+	"wv3" : {
+		"name" : "Lightning",
+		"char" : 10239,
+		"parent" : ["wv2"]
+	},
+	"pc" : {
+		"name" : "Pierce",
+		"char" : 8608,
+		"parent" : ["d"]
+	},
+	"pc2" : {
+		"name" : "Pierce II",
+		"char" : 10496,
+		"parent" : ["pc"]
+	},
+	"pc3" : {
+		"name" : "Pierce III",
+		"char" : 10497,
+		"parent" : ["pc2"]
+	},
+	"ar" : {
+		"name" : "Arrow",
+		"char" : 8611,
+		"parent" : ["d"]
+	},
+	"ar2" : {
+		"name" : "Arrow II",
+		"char" : 10516,
+		"parent" : ["ar"]
+	},
+	"ar3" : {
+		"name" : "Arrow III",
+		"char" : 10517,
+		"parent" : [""]
+	},
+	"arpc" : {
+		"name" : "Arrow Pierce",
+		"char" : 10518,
+		"parent" : ["ar", "pc"]
+	},
+	"arpc2" : {
+		"name" : "Arrow Pierce II",
+		"char" : 10519,
+		"parent" : ["arpc", "pc2"]
+	},
+	"arpc3" : {
+		"name" : "Arrow Pierce III",
+		"char" : 10520,
+		"parent" : ["arpc2", "pc3"]
+	},
+	"hp" : {
+		"name" : "Harpoon",
+		"char" : 8640,
+		"parent" : ["ar"]
+	},
+	"hpk" : {
+		"name" : "Harpoon Knockback",
+		"char" : 10579,
+		"parent" : ["hp"]
+	},
+	"hp2" : {
+		"name" : "Double Harpoon",
+		"char" : 10596,
+		"parent" : ["hp"]
+	},
+	"hp3" : {
+		"name" : "Harpoon Beam",
+		"char" : 10174,
+		"parent" : ["hp2"]
+	},
+	"dr" : {
+		"name" : "Ranged",
+		"char" : 8614,
+		"parent" : ["d"]
+	},
+	"dr2" : {
+		"name" : "Long Ranged",
+		"char" : 10236,
+		"parent" : ["dr"]
+	},
+	"rp" : {
+		"name" : "Rapid",
+		"char" : 10509,
+		"parent" : ["d"]
+	},
+	"rp2" : {
+		"name" : "More Rapid",
+		"char" : 10511,
+		"parent" : ["rp"]
+	},
+	"rp3" : {
+		"name" : "Fully Auto",
+		"char" : 8674,
+		"parent" : ["rp2"]
+	},
+	"st" : {
+		"name" : "Strength",
+		"char" : 8696,
+		"parent" : ["d"]
+	},
+	"st2" : {
+		"name" : "Strength II",
+		"char" : 8699,
+		"parent" : ["st"]
+	},
+	"str" : {
+		"name" : "Strength II Reverse",
+		"char" : 8700,
+		"parent" : ["st2"]
+	},
+	"ln" : {
+		"name" : "Lance",
+		"char" : 10230,
+		"parent" : ["dr"]
+	},
+	"ln2" : {
+		"name" : "Lance II",
+		"char" : 10233,
+		"parent" : ["ln"]
+	},
+	"ln3" : {
+		"name" : "Lance III",
+		"char" : 10238,
+		"parent" : ["ln2"]
+	},
+	"drst" : {
+		"name" : "Ranged Strength",
+		"char" : 10503,
+		"parent" : ["stb", "dr"]
+	},
+	"st3" : {
+		"name" : "Strength III",
+		"char" : 10499,
+		"parent" : ["st2"]
+	},
+}
