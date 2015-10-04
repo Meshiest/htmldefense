@@ -28,16 +28,19 @@ canvas.on('click', function(e) {
 	var x = e.pageX - width/2
 	var y = e.pageY - height/2
 	switch(clickMode) {
-	case 0:
+	case 0: case 2:
 		for(var i in constructs) {
 			var tower = constructs[i]
-			if(Math.hypot(x-tower.x, y-tower.y) < 50) {
-				selectedTower = i
+			if(Math.hypot(x-tower.x, y-tower.y) < 25) {
 				clickMode = MODE_UPGRADE
+				selectedTower = i
 				showUpgrades()
 				return
 			}
 		}
+		clickMode = MODE_NONE
+		selectedTower = undefined
+		$('#upgrades').html("<div class='desc'>No Tower Selected</div>")
 		break;
 	case 1:
 		for(var i in constructs) {
@@ -59,8 +62,10 @@ canvas.on('click', function(e) {
 	}
 })
 
-function showUpgrades() {
-	var tower = constructs[selectedTower]
+function showUpgrades(tower) {
+	if(!tower)
+		var tower = constructs[selectedTower]
+	console.log(tower)
 	$('#upgrades').html('');
 	for(var k in towers) {
 		var v = towers[k]
@@ -73,11 +78,18 @@ function showUpgrades() {
 	}
 }
 
+function clickUpgrade(e) {
+	var type = $(e).attr('type')
+	var tower = constructs[selectedTower]
+	tower.type = type;
+	showUpgrades()
+}
+
 function genUpgradeDesc(type) {
-	var type = towers[type]
-	return $('<div class="upgrade">')
-		.append($('<span class="icon">&#'+type.char+';</span>'))
-		.append($('<span class="name">'+type.name+"</span>"))
+	var tower = towers[type]
+	return $('<div class="upgrade" type="'+type+'" onclick="clickUpgrade(this)">')
+		.append($('<span class="icon">&#'+tower.char+';</span>'))
+		.append($('<span class="name">'+tower.name+"</span>"))
 }
 
 function buyTower() {
@@ -105,7 +117,9 @@ function drawCrystal() {
 	g.fill()
 }
 
-function drawTower(char, x, y, theta) {
+function drawTower(char, x, y, theta, selected) {
+	var time = new Date().getTime();
+	
 	if(!theta)
 		theta = 0
 
@@ -113,9 +127,27 @@ function drawTower(char, x, y, theta) {
 	g.translate(x, y)
 	g.rotate(-theta)
 	g.fillStyle="#222"
+	if(clickMode != MODE_BUY && Math.hypot(mouseX-x, mouseY-y) < 25)
+			g.fillStyle="#333"
+	if(selected) {
+		var k = Math.floor(Math.sin(time*0.01)*8+32)
+		g.fillStyle = 'rgb('+k+','+k+','+k+')'
+	}
 	g.beginPath()
 	g.arc(0, 0, 25, 0, Math.PI * 2, false)
+	g.closePath();
 	g.fill()
+
+	if(selected) {
+		g.save()
+		g.strokeStyle='#ff0'
+		g.lineWidth = 4
+		var circ = Math.PI * 2 * 25;
+		g.setLineDash([circ/4])
+		g.lineDashOffset = (time*0.1)%circ;
+		g.stroke()
+		g.restore()
+	}
 
 	g.fillStyle="#fff"
 	g.textAlign="center"
@@ -141,7 +173,7 @@ function tick() {
 
 	for(var i in constructs) {
 		var tower = constructs[i]
-		drawTower(towers[tower.type].char, tower.x, tower.y)
+		drawTower(towers[tower.type].char, tower.x, tower.y, tower.theta, selectedTower == i)
 	}
 
 	switch(clickMode) {
