@@ -91,7 +91,7 @@ var towers = {
 		"name" : "Arrow III",
 		"char" : 10517,
 		"cost" : 50,
-		"parent" : [""]
+		"parent" : ["ar2"]
 	},
 	"arpc" : {
 		"name" : "Arrow Pierce",
