@@ -50,7 +50,7 @@ canvas.on('click', function(e) {
 			}
 		}
 		money -= baseCost;
-		var tower = {'x': x, 'y': y, 'theta': 0, 'type': 'd'}
+		var tower = {'x': x, 'y': y, 'theta': 0, 'type': 'd', 'value': baseCost}
 		constructs.push(tower)
 		clickMode = MODE_UPGRADE
 		selectedTower = constructs.indexOf(tower)
@@ -93,8 +93,9 @@ function clickUpgrade(e) {
 function genUpgradeDesc(type) {
 	var tower = towers[type]
 	return $('<div class="upgrade" type="'+type+'" onclick="clickUpgrade(this)">')
-		.append($('<span class="icon">&#'+tower.char+';</span>'))
-		.append($('<span class="name">'+tower.name+"</span>"))
+		.append($('<div class="icon">&#'+tower.char+';</div>'))
+		.append($('<div class="name">'+tower.name+"</div>"))
+		.append($('<div class="cost">$'+tower.cost+"</div>"))
 }
 
 function buyTower() {
@@ -161,7 +162,7 @@ function drawTower(char, x, y, theta, selected) {
 	g.rotate(theta)
 	g.fillText(String.fromCharCode(char), 0, 0)
 	g.restore()
-	
+
 	g.restore()
 }
 

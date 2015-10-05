@@ -83,10 +83,23 @@ header {
 	padding: 0.5em;
 }
 
-.icon {
+.upgrade div {
+	display: inline-block;
+}
+
+.upgrade .name {
+}
+
+.upgrade .icon {
 	display: inline-block;
 	font-size: 2em;
 	width: 1.5em;
+}
+
+.upgrade .cost {
+	position: absolute;
+	right: 1em;
+	margin: auto;
 }
 
 .upgrade:nth-child(odd) {
