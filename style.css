@@ -97,9 +97,9 @@ header {
 }
 
 .upgrade .cost {
-	position: absolute;
-	right: 1em;
-	margin: auto;
+	padding: 1em;
+	font-weight: bold;
+	float: right;
 }
 
 .upgrade:nth-child(odd) {
@@ -108,4 +108,9 @@ header {
 
 .upgrade:hover {
 	background: #333;
+}
+
+.disabled {
+	text-decoration: line-through;
+	color: #aaa;
 }

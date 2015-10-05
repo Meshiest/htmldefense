@@ -86,13 +86,16 @@ function showUpgrades(tower) {
 function clickUpgrade(e) {
 	var type = $(e).attr('type')
 	var tower = constructs[selectedTower]
+	if(towers[type].cost > money)
+		return;
+	money -= towers[type].cost
 	tower.type = type;
 	showUpgrades()
 }
 
 function genUpgradeDesc(type) {
 	var tower = towers[type]
-	return $('<div class="upgrade" type="'+type+'" onclick="clickUpgrade(this)">')
+	return $('<div class="upgrade'+(tower.cost > money?" disabled":"")+'" type="'+type+'" onclick="clickUpgrade(this)">')
 		.append($('<div class="icon">&#'+tower.char+';</div>'))
 		.append($('<div class="name">'+tower.name+"</div>"))
 		.append($('<div class="cost">$'+tower.cost+"</div>"))
